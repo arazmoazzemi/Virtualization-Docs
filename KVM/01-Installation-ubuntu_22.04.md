@@ -10,3 +10,8 @@ sudo systemctl status libvirtd
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ```
+check host validation
+
+```
+virt-host-validate
+```
