@@ -14,10 +14,10 @@ sudo systemctl status libvirtd
 ```
 
 *Grant permissions*
-`
+```
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
-`
+```
 
 *Validation*
 ```
@@ -138,7 +138,7 @@ sudo netplan generate
 sudo netplan --debug apply
 
 sudo networkctl status virbr0
-
+```
 
 *make a custom bidge netwok*
 ```
@@ -174,7 +174,6 @@ virsh net-start vmbr0
 virsh net-autostart --network vmbr0
 
 service libvirtd restart
-
 ```
 
 
