@@ -98,9 +98,85 @@ Select the "Copy host CPU configuration" check box in the CPU configuration wind
 egrep --color -i "svm|vmx" /proc/cpuinfo
 ```
 
+*make a custom bidge netwok*
+
+*static ip address---enp1s0 interface*
+```
+nano /etc/netplan/00-installer-config.yaml
+
+network:
+  version: 2
+  renderer: networkd
+
+  ethernets:
+    eno1:
+      dhcp4: false
+      dhcp6: false
+
+  bridges:
+    vmbr0:
+      interfaces: [eno1]
+      addresses: [192.168.31.30/24]
+      # gateway4 is deprecated, use routes instead
+      routes:
+      - to: default
+        via: 192.168.31.7
+        metric: 100
+        on-link: true
+      mtu: 1500
+      nameservers:
+        addresses: [8.8.8.8]
+      parameters:
+        stp: true
+        forward-delay: 4
+      dhcp4: no
+      dhcp6: no
+```
+
+```
+sudo netplan generate
+sudo netplan --debug apply
+
+sudo networkctl status virbr0
 
 
+*make a custom bidge netwok*
+```
+brctl show
 
+virsh net-list --all
+virsh net-info default
+virsh net-dumpxml default
+
+
+# destroy and undefine every bridge networks
+virsh net-destroy default
+virsh net-undefine default
+ip link delete virbr0
+
+
+#add below
+
+nano /etc/libvirt/qemu/networks/vmbr0.xml
+
+<network>
+  <name>vmbr0</name>
+  <forward mode="bridge"/>
+  <bridge name="vmbr0" />
+</network>
+
+
+cd /etc/libvirt/qemu/networks/
+sudo mv /etc/libvirt/qemu/networks/default.xml default.xml.orig
+sudo rm /etc/libvirt/qemu/networks/default.xml
+virsh net-define --file /etc/libvirt/qemu/networks/vmbr0.xml
+
+virsh net-start vmbr0
+virsh net-autostart --network vmbr0
+
+service libvirtd restart
+
+```
 
 
 
