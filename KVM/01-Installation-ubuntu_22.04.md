@@ -19,7 +19,7 @@ sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ```
 
-**Check member of libvirt group*
+*Check member of libvirt group*
 ```
 getent group libvirt | awk -F: '{print $4}' |  tr "," " "
 ```
