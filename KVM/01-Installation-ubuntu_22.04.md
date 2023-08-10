@@ -7,7 +7,7 @@ sudo apt-get -y install libvirt-dev libvirt-daemon-system virtinst libvirt-clien
 
 ```
 
-*Enable libvirtd Srvice*
+*Enable libvirtd Service*
 ```
 sudo systemctl enable libvirtd && systemctl start libvirtd
 sudo systemctl status libvirtd
