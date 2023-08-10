@@ -176,7 +176,80 @@ virsh net-autostart --network vmbr0
 service libvirtd restart
 ```
 
+*Preparing Machine Images for qemu/kvm*
+*https://www.virtualizor.com/ostemplates/*
+```
+mkdir -p  /var/lib/libvirt/isos
 
+wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso \
+  -O /var/lib/libvirt/isos/ubuntu-22.04.2.iso
+```
+
+*vga installation*
+```
+virt-install \
+  --name ubuntu-desktop \
+  --connect=qemu:///system \
+  --ram 8192 \
+  --disk path=/var/lib/libvirt/images/ubuntu-desktop.qcow2,size=100 \
+  --vcpu 4 \
+  --graphics vnc \
+  --cdrom /var/lib/libvirt/isos/ubuntu-22.04.2-desktop-amd64.iso 
+  --network bridge=virbr0,model=virtio \
+  --boot hd
+```
+
+*console installation*
+```
+virt-install \
+  --name opennebula-cloud \
+  --ram 8192 \
+  --disk path=/var/lib/libvirt/images/opennebula-cloud.qcow2,size=30 \
+  --vcpus 4 \
+  --os-variant ubuntu22.04 \
+  --network bridge=virbr0 \
+  --graphics none \
+  --console pty,target_type=serial \
+  --location /var/lib/libvirt/isos/ubuntu-22.04.2-live-server-amd64.iso,kernel=casper/vmlinuz,initrd=casper/initrd \
+  --extra-args 'console=ttyS0,115200n8' 
+```
+
+*raw disk format installation*
+```
+virt-install \
+  --name ubuntu-server\
+  --connect=qemu:///system \
+  --ram 8192 \
+  --disk path=/var/lib/libvirt/images/ubuntu-server.raw,format=raw,size=100 \
+  --vcpu 4 \
+  --graphics vnc \
+  --cdrom /var/lib/libvirt/isos/ubuntu-22.04.2-live-server-amd64.iso 
+  --network bridge=virbr0,model=virtio \
+  --boot hd
+```
+
+*optional*
+```
+  --os-type=Linux \
+  --disk path=image_file,bus=virtio,size=12 \
+  
+  --graphics none \
+  --extra-args='console=ttyS0,115200n8 --- console=ttyS0,115200n8' \
+  --debug
+  --disk path=/var/lib/libvirt/images/ubuntu-22.04.2-desktop-amd64.raw,format=raw,bus=scsi,size=80 \
+
+osinfo-query os
+
+  --os-variant ubuntu22.04 \
+```
+
+
+*clone-kvm-host*
+```
+virt-clone --original ubuntu-template \
+    --name ubuntu-22.04.2 \
+    --file /var/lib/libvirt/images/ubuntu-22.04.2.qcow2
+```
 
 
 
