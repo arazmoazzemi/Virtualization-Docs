@@ -47,6 +47,14 @@ GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 update-grub
 ```
+*Check libvirt log*
+
+```
+journalctl -u libvirtd.service
+
+```
+
+
 
 *install osinfo-db-tools*
 ```
