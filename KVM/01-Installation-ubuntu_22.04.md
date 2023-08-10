@@ -148,12 +148,10 @@ virsh net-list --all
 virsh net-info default
 virsh net-dumpxml default
 
-
 # destroy and undefine every bridge networks
 virsh net-destroy default
 virsh net-undefine default
 ip link delete virbr0
-
 
 #add below
 
@@ -164,8 +162,9 @@ nano /etc/libvirt/qemu/networks/vmbr0.xml
   <forward mode="bridge"/>
   <bridge name="vmbr0" />
 </network>
+```
 
-
+```
 cd /etc/libvirt/qemu/networks/
 sudo mv /etc/libvirt/qemu/networks/default.xml default.xml.orig
 sudo rm /etc/libvirt/qemu/networks/default.xml
