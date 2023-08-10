@@ -53,7 +53,20 @@ update-grub
 journalctl -u libvirtd.service
 
 ```
+*If faced with issue, after install virt-manager*
 
+```
+# 1 - Check Permission
+getent group libvirt
+
+# 2 - Give Permission
+sudo usermod -aG libvirt $USER
+sudo usermod -aG kvm $USER
+
+# 3- Restart the server
+newgrp libvirt
+virt-manager
+```
 
 
 *install osinfo-db-tools*
