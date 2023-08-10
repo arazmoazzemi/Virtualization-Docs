@@ -85,9 +85,14 @@ sudo osinfo-db-import --local "/tmp/osinfo-db.tar.xz"
 osinfo-query os
 ```
 
-*enable port forwarding*
+*Enable port forwarding*
 ```
 sysctl -p
+
+sysctl -w net.ipv4.ip_forward=1
+# OR
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
 ```
 
 *stop iptables*
