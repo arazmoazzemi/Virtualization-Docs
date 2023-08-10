@@ -71,12 +71,11 @@ sudo touch /etc/cloud/cloud-init.disabled
 ```
 
 *Enable nested virtualization*
-```
-# Before enabling nested VT feature, power off all running VMs.
 
+Before enabling nested VT feature, power off all running VMs.
+```
 sudo modprobe -r kvm_intel
 sudo modprobe kvm_intel nested=1
-
 
 # Enable Nested Virtualization Permanently
 
