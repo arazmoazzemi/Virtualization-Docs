@@ -147,7 +147,10 @@ network:
   renderer: networkd
 
   ethernets:
+    
     eno1:
+      optional:
+        true
       dhcp4: false
       dhcp6: false
 
