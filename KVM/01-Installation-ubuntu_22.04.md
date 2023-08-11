@@ -145,21 +145,24 @@ nano /etc/netplan/00-installer-config.yaml
 network:
   version: 2
   renderer: networkd
-  ethernets:    
-    eno1:
+
+  ethernets:
+    ens32:
       optional:
         true
       dhcp4: false
       dhcp6: false
 
   bridges:
-    vmbr0:
-      interfaces: [eno1]
-      addresses: [192.168.31.30/24]
+    virbr0:
+      optional:
+        true
+      interfaces: [ens32]
+      addresses: [192.168.200.51/24]
       # gateway4 is deprecated, use routes instead
       routes:
       - to: default
-        via: 192.168.31.7
+        via: 192.168.200.2
         metric: 100
         on-link: true
       mtu: 1500
@@ -170,6 +173,7 @@ network:
         forward-delay: 4
       dhcp4: no
       dhcp6: no
+
 ```
 
 ```
