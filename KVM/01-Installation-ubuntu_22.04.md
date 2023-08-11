@@ -145,9 +145,7 @@ nano /etc/netplan/00-installer-config.yaml
 network:
   version: 2
   renderer: networkd
-
-  ethernets:
-    
+  ethernets:    
     eno1:
       optional:
         true
