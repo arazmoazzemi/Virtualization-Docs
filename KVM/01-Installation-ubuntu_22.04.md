@@ -110,7 +110,7 @@ iptables -F
 sudo touch /etc/cloud/cloud-init.disabled
 ```
 
-*Enable nested virtualization*
+***Enable nested virtualization***
 
 Before enabling nested VT feature, power off all running VMs.
 ```
