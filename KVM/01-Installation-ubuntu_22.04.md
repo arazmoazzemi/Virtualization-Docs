@@ -44,10 +44,11 @@ sudo nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 
 # Add below lines :
+# AMD_CPU
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"
 
-#GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"
+# Intel_CPU
 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
-
 GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 
