@@ -78,7 +78,7 @@ virt-manager
 ```
 
 
-*install osinfo-db-tools*
+*Install osinfo-db-tools*
 ```
 sudo apt install osinfo-db-tools
 wget -O "/tmp/osinfo-db.tar.xz" "https://releases.pagure.org/libosinfo/osinfo-db-20230518.tar.xz"
@@ -97,7 +97,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ```
 
-*stop iptables*
+*Stop iptables*
 ```
 iptables -P INPUT ACCEPT
 iptables -P OUTPUT ACCEPT
@@ -105,7 +105,7 @@ iptables -P FORWARD ACCEPT
 iptables -F
 ```
 
-*disable cloud-init*
+*Disable cloud-init*
 ```
 sudo touch /etc/cloud/cloud-init.disabled
 ```
@@ -124,17 +124,18 @@ options kvm_intel nested=1
 
 cat /sys/module/kvm_intel/parameters/nested
 modinfo kvm_intel | grep -i nested
-
+```
 
 # Enable Nested Feature In KVM Guests Using Virt-manager
 
-Copy host CPU configuration
+*Copy host CPU configuration*
 
-Open Virt-manager GUI application and double click the KVM guest in which you want to enable nested VT feature.
- Click on the "Show virtual hardware details" button and go to the "CPUs" section in left menu.
+*Open Virt-manager GUI application and double click the KVM guest in which you want to enable nested VT feature*
+*Click on the "Show virtual hardware details" button and go to the "CPUs" section in left menu*
 
-Select the "Copy host CPU configuration" check box in the CPU configuration window and click Apply.
+*Select the "Copy host CPU configuration" check box in the CPU configuration window and click Apply*
 
+```
 egrep --color -i "svm|vmx" /proc/cpuinfo
 ```
 
