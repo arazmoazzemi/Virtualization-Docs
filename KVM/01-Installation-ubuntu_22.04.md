@@ -52,7 +52,8 @@ GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 
 ```
-update-grub
+sudo update-grub
+sudo reboot
 ```
 *Check libvirt log*
 
