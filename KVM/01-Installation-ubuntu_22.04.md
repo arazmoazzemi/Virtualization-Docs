@@ -186,7 +186,7 @@ sudo netplan --debug apply
 sudo networkctl status virbr0
 ```
 
-*make a custom bidge netwok*
+*Make a custom bridge netwok*
 ```
 brctl show
 
@@ -231,7 +231,7 @@ wget https://releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso \
   -O /var/lib/libvirt/isos/ubuntu-22.04.2.iso
 ```
 
-*vga installation*
+*Autoinstall installation*
 ```
 virt-install \
   --name ubuntu-desktop \
@@ -239,13 +239,13 @@ virt-install \
   --ram 8192 \
   --disk path=/var/lib/libvirt/images/ubuntu-desktop.qcow2,size=100 \
   --vcpu 4 \
-  --graphics vnc \
+  --graphics vnc,listen=0.0.0.0 \
   --cdrom /var/lib/libvirt/isos/ubuntu-22.04.2-desktop-amd64.iso 
   --network bridge=virbr0,model=virtio \
   --boot hd
 ```
 
-*console installation*
+*Console installation*
 ```
 virt-install \
   --name opennebula-cloud \
@@ -274,7 +274,7 @@ virt-install \
   --boot hd
 ```
 
-*optional*
+*Optional*
 ```
   --os-type=Linux \
   --disk path=image_file,bus=virtio,size=12 \
