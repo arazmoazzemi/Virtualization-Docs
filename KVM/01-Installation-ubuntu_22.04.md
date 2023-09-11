@@ -1,5 +1,5 @@
 # Install kvm on ubuntu 22.04
-To install KVM on Ubuntu 22.04, you need to follow these steps:
+To install KVM on Ubuntu 22.04, you need to follow this steps:
 
 *Make sure that your CPU supports hardware virtualization*
 
