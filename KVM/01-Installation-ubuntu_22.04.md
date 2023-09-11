@@ -52,19 +52,19 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
 GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 
-```
+```bash
 sudo update-grub
 sudo reboot
 ```
 *Check libvirt log*
 
-```
+```bash
 journalctl -u libvirtd.service
 
 ```
 *If faced with issue, after install virt-manager*
 
-```
+```bash
 # 1 - Check Permission
 getent group libvirt
 
