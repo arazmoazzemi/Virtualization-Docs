@@ -21,23 +21,23 @@ sudo systemctl status libvirtd
 ```
 
 *Grant permissions*
-```
+```bash
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ```
 
 *Check member of libvirt group*
-```
+```bash
 getent group libvirt | awk -F: '{print $4}' |  tr "," " "
 ```
 
 *Validation*
-```
+```bash
 virt-host-validate
 ```
 
 ***Enable_IOMMU***
-```
+```bash
 sudo nano /etc/default/grub
 
 # Disable or comment below line
