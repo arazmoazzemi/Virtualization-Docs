@@ -98,7 +98,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
 *Stop iptables*
-```
+```bash
 iptables -P INPUT ACCEPT
 iptables -P OUTPUT ACCEPT
 iptables -P FORWARD ACCEPT
@@ -106,7 +106,7 @@ iptables -F
 ```
 
 *Disable cloud-init*
-```
+```bash
 sudo touch /etc/cloud/cloud-init.disabled
 ```
 
