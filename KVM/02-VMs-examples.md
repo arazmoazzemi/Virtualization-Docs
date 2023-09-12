@@ -15,6 +15,8 @@ virt-install \
 ----
 
 Example for wazuh :
+Note! Wazuh use GUI (Don't use  --graphics none )
+
 ```bash
 virt-install \
   --import --name wazuh \
