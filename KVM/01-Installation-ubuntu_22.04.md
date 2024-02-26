@@ -87,7 +87,7 @@ virt-manager
 *Install osinfo-db-tools*
 ```
 sudo apt install osinfo-db-tools -y
-wget -O "/tmp/osinfo-db.tar.xz" "https://releases.pagure.org/libosinfo/osinfo-db-20230518.tar.xz"
+wget -O "/tmp/osinfo-db.tar.xz" "https://releases.pagure.org/libosinfo/osinfo-db-20231215.tar.xz"
 sudo osinfo-db-import --local "/tmp/osinfo-db.tar.xz"
 
 osinfo-query os
