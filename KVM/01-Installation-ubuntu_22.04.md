@@ -52,7 +52,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
 GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 
-# Check IOMMU enabled:
+*Check IOMMU enabled:
 ```
 sudo dmesg | grep -e DMAR -e IOMMU
 ```
