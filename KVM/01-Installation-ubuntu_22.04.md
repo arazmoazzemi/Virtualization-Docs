@@ -52,16 +52,16 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
 GRUB_CMDLINE_LINUX="rhgb systemd.unified_cgroup_hierarchy=0"
 ```
 
+```bash
+sudo update-grub
+sudo reboot
+```
+
 ***Check enabled IOMMU:***
 ```
 sudo dmesg | grep -e DMAR -e IOMMU
 ```
 
-
-```bash
-sudo update-grub
-sudo reboot
-```
 *Check libvirt log*
 
 ```bash
