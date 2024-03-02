@@ -303,7 +303,13 @@ virt-clone --original ubuntu-template \
     --file /var/lib/libvirt/images/ubuntu-22.04.2.qcow2
 ```
 
-
+### Direct connect to VMs
+```
+virsh -c qemu+ssh://maas@192.168.31.33/system list --all
+ssh maas@192.168.31.33 -t 'bash -l -c "virsh uri"'
+ssh maas@192.168.31.33 -t 'bash -l -c "virsh dominfo ubuntu"'
+ssh maas@192.168.31.33 "virsh uri"
+```
 
 
 
