@@ -31,6 +31,9 @@ cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
 ### For example:
 
 ```
+brctl addbr vmbr4
+```
+```
 touch /etc/libvirt/qemu/networks/vmbr4.xml
 nano /etc/libvirt/qemu/networks/vmbr4.xml
 
@@ -44,11 +47,13 @@ nano /etc/libvirt/qemu/networks/vmbr4.xml
     </dhcp>
   </ip>
 </network>
-
-
-virsh net-define vmbr1.xml
+```
+```
+virsh net-define --validate --file vmbr4.xml
+```
+```
 virsh net-start vmbr1
-
+```
 
 
 
