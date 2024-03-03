@@ -31,11 +31,13 @@ cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
 ### For example:
 
 ```
+touch /etc/libvirt/qemu/networks/vmbr4.xml
+nano /etc/libvirt/qemu/networks/vmbr4.xml
 
 <network>
-  <name>vmbr1</name>  
+  <name>vmbr4</name>  
   <forward mode='nat'/>
-  <bridge name='vmbr1' stp='on' delay='0'/>  
+  <bridge name='vmbr4' stp='on' delay='0'/>  
   <ip address='192.168.122.1' netmask='255.255.255.0'>
     <dhcp>
       <range start='192.168.122.122' end='192.168.122.254'/>
