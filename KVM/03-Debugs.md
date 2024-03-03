@@ -17,10 +17,10 @@ virsh net-list --all
 ----
 
 
-Log
+Network Logs
 ```bash
-cat /var/log/syslog | grep kvm | grep network | grep vmbr1
-cat /var/log/syslog | grep libvirtd | grep vmbr1
+cat /var/log/syslog | grep kvm | grep network | grep <Bridge_Name>
+cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
 ```
 
 
