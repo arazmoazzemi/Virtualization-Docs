@@ -48,9 +48,13 @@ nano /etc/libvirt/qemu/networks/vmbr4.xml
   </ip>
 </network>
 ```
+
 ```
 virsh net-define --validate --file vmbr4.xml
 ```
+
+### Important Note! Restart KVM HOST
+
 ```
 virsh net-start vmbr1
 ```
