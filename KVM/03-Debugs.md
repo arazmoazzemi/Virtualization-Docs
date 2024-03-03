@@ -10,6 +10,7 @@
 
 ----
 ### Network configs path:
+
 ```bash
 cd /etc/libvirt/qemu/networks/
 virsh net-list --all
@@ -17,7 +18,8 @@ virsh net-list --all
 ----
 
 
-Network Logs
+### Network Logs:
+
 ```bash
 cat /var/log/syslog | grep kvm | grep network | grep <Bridge_Name>
 cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
@@ -25,10 +27,10 @@ cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
 
 
 
-How Can I add Nat mode adapter:
-For example
+### How Can I add Nat mode adapter:
+### For example:
 
-
+```
 
 <network>
   <name>vmbr1</name>  
