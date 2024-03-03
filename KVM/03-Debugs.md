@@ -1,6 +1,9 @@
+### KVM Debugs:
 
-
-We can configure the network card in three modes.
+ 1We can configure the network card in three modes.
+ 1- Bridge mode
+ 2- Nat mode
+ 3- host mode
 
 
 ### Network configs path:
