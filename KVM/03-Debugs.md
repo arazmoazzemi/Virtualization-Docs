@@ -59,5 +59,9 @@ virsh net-define --validate --file vmbr4.xml
 virsh net-start vmbr1
 ```
 
+```
+iptables -F
+
+```
 
 
