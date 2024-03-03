@@ -1,3 +1,8 @@
+
+
+We can configure the network card in three modes.
+
+
 ### Network configs path:
 ```
 cd /etc/libvirt/qemu/networks/
