@@ -25,9 +25,9 @@ cat /var/log/syslog | grep libvirtd | grep <Bridge_Name>
 
 
 
+How Can I add Nat mode adapter:
+For example
 
-virsh net-destroy --network vmbr1
-nano vmbr1.xml
 
 
 <network>
