@@ -1,6 +1,8 @@
+### Network configs path:
+```
 cd /etc/libvirt/qemu/networks/
 virsh net-list --all
-
+```
 
 
 
