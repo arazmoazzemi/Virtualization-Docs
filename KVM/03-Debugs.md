@@ -53,7 +53,7 @@ nano /etc/libvirt/qemu/networks/vmbr4.xml
 virsh net-define --validate --file vmbr4.xml
 ```
 
-### ❗ Important Note: 👉Restart KVM HOST and 
+### ❗ Important Note: 👉Restart KVM HOST after define new kvm adapter and,
 
 ```
 virsh net-start vmbr1
