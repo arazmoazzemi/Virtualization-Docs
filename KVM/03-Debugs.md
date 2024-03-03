@@ -10,23 +10,18 @@
 
 ----
 ### Network configs path:
-```
+```bash
 cd /etc/libvirt/qemu/networks/
 virsh net-list --all
 ```
 ----
 
 
-
-sudo systemctl restart systemd-networkd &&
-sudo ip link set vmbr1 down && sudo ip link set vmbr1 up &&
-systemctl restart libvirtd
-
-sudo /etc/init.d/networking restart
-
+Log
+```bash
 cat /var/log/syslog | grep kvm | grep network | grep vmbr1
 cat /var/log/syslog | grep libvirtd | grep vmbr1
-
+```
 
 
 
