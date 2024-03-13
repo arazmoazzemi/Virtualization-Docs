@@ -63,5 +63,16 @@ virsh net-start vmbr1
 iptables -F
 
 ```
-
+### Add network with YML
+```
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    minionebr-nic: {}
+  bridges:
+    minionebr:
+      addresses: [ 172.16.100.1/24 ]
+      interfaces: [ minionebr-nic ]
+```
 
