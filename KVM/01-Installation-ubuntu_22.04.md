@@ -95,11 +95,11 @@ osinfo-query os
 
 *Enable port forwarding*
 ```
-sysctl -p
+sudo sysctl -p
 
-sysctl -w net.ipv4.ip_forward=1
+sudo sysctl -w net.ipv4.ip_forward=1
 # OR
-echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 
 ```
 
