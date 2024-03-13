@@ -105,10 +105,10 @@ sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 
 *Stop iptables*
 ```bash
-iptables -P INPUT ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -P FORWARD ACCEPT
-iptables -F
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -F
 ```
 
 *Disable cloud-init*
