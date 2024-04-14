@@ -16,6 +16,11 @@ iscsiadm -m node --login
 iscsiadm -m session -o show
 ```
 
+
+```
+sgdisk --zap-all /dev/sdb
+```
+
 ```
 lsblk 
 mkdir btrfs
