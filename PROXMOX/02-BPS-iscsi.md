@@ -10,10 +10,11 @@ nano /etc/iscsi/iscsid.conf
 node.startup = automatic
 
 
-
+```
 iscsiadm -m discovery -t st -p 192.168.31.99
 iscsiadm -m node --login
 iscsiadm -m session -o show
+```
 
 lsblk 
 mkdir btrfs
