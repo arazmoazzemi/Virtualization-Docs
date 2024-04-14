@@ -1,17 +1,21 @@
+### Connect the iSCSI target in your PBS server
 
-
-Connect the iSCSI target in your PBS server
-
+For Example this is an An IQN is a standard way to uniquely identify iSCSI devices on a network:
+```
 iqn.2000-01.com.synology:save.Target-1.3bee535fbe
-iqn.2000-01.com.synology:save.Target-1.3bee535fbe
+```
 
+```
 iscsiadm -m discovery -t st -p 192.168.31.99
 
 iscsiadm -m node --targetname iqn.2000-01.com.synology:save.Target-1.3bee535fbe --portal 192.168.31.99 --login
 
 iscsiadm -m session
+```
 
+```
 iscsiadm -m node --targetname iqn.2000-01.com.synology:save.Target-1.3bee535fbe --portal 192.168.31.99 --op update --name node.startup --value automatic
+```
 
 mkdir /mnt/iscsi
 
