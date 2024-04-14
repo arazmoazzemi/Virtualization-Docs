@@ -24,7 +24,7 @@ sgdisk --zap-all /dev/sdb
 ```
 lsblk 
 mkdir btrfs
-mkfs.btrfs /dev/sdb
+mkfs.btrfs -f /dev/sdb
 mount /dev/sdb btrfs/
 df -h
 ```
