@@ -30,10 +30,9 @@ blkid /dev/sdb
 
 ```
 lsblk -d /dev/sdb
-
-/dev/sdb: UUID="2fcbaaad-3e32-44be-8e7b-149c3f8fed76" BLOCK_SIZE="512" TYPE="xfs"
-
 UUID=2fcbaaad-3e32-44be-8e7b-149c3f8fed76 /mnt/iscsi xfs _netdev 0 0
+
+echo "/dev/sdb: UUID="2fcbaaad-3e32-44be-8e7b-149c3f8fed76" BLOCK_SIZE="512" TYPE="xfs" ">> /etc/fstab
 ```
 
 
