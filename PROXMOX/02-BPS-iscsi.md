@@ -32,7 +32,7 @@ blkid /dev/sdb
 lsblk -d /dev/sdb
 UUID=2fcbaaad-3e32-44be-8e7b-149c3f8fed76 /mnt/iscsi xfs _netdev 0 0
 
-echo "/etc/fstabUUID=2fcbaaad-3e32-44be-8e7b-149c3f8fed76 /mnt/iscsi xfs _netdev 0 0 ">> /etc/fstab
+echo "UUID=2fcbaaad-3e32-44be-8e7b-149c3f8fed76 /mnt/iscsi xfs _netdev 0 0 ">> /etc/fstab
 ```
 
 
