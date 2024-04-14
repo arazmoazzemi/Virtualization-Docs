@@ -1,6 +1,9 @@
 ### Connect the iSCSI target in your PBS server
 
 For Example this is an An IQN is a standard way to uniquely identify iSCSI devices on a network:
+
+1. Discover iSCSI Targets
+Use the iscsiadm command to discover iSCSI targets available on the network. This step allows the PBS server to identify the target it wants to connect to.
 ```
 iqn.2000-01.com.synology:save.Target-1.3bee535fbe
 ```
