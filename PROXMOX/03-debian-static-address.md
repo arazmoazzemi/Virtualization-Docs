@@ -1,3 +1,5 @@
+https://forum.proxmox.com/threads/cluster-wide-networking-management-with-sdn.137279/
+
 192.168.200.61 pve01.mylab.loc pve01
 192.168.200.62 pve02.mylab.loc pve02
 192.168.200.63 pve03.mylab.loc pve03
